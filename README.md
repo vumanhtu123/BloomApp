@@ -15,6 +15,13 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+### Setup app
+
 - Name app: Bloom App
 - Version flutter: 3.24.3
 - Version dart: 3.5.3
+
+### References
+
+- Riverpod: https://riverpod.dev/
+- 

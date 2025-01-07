@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Bloom App',
         onGenerateRoute: Routes.generateDefaultRoute,
-        initialRoute: RouteDefine.userProfileScreen,
+        initialRoute: RouteDefine.splashScreen,
         theme: ThemeData(
           primaryColor: AppColors.primaryColor,
           fontFamily: 'Montserrat',

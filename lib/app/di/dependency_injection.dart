@@ -10,6 +10,8 @@ final GetIt injector = GetIt.instance;
 
 void setupDependencies() {
   // Core dependencies
+  // Tự động hóa quản lý dependency: Giúp tránh việc tạo nhiều instance của cùng một class.
+
   injector.registerSingleton<Dio>(Dio());
 
   injector.registerLazySingleton<BaseApi>(() => BaseApi());

@@ -19,15 +19,15 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => injector<UserProfileViewModel>(),
+          create: (_) => injector<UserViewModel>(),
         ),
       ],
       child: MaterialApp(
         navigatorKey: Routes.instance.navigatorKey,
         debugShowCheckedModeBanner: false,
-        title: 'SinHair',
+        title: 'Bloom App',
         onGenerateRoute: Routes.generateDefaultRoute,
-        initialRoute: RouteDefine.splashScreen,
+        initialRoute: RouteDefine.userProfileScreen,
         theme: ThemeData(
           primaryColor: AppColors.primaryColor,
           fontFamily: 'Montserrat',
@@ -45,4 +45,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

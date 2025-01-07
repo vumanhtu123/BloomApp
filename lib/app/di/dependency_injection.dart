@@ -1,9 +1,9 @@
+import 'package:bloom_app/data/base_api/base_api.dart';
+import 'package:bloom_app/data/services/api_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 
-import '../../data/repositories/user_repository.dart';
-import '../../data/sources/user_api_source.dart';
-import '../../domain/use_cases/get_user_profile.dart';
+import '../../data/repositories/repository.dart';
 import '../../presentation/viewmodels/user_profile_viewmodel.dart';
 
 final GetIt injector = GetIt.instance;
@@ -12,14 +12,11 @@ void setupDependencies() {
   // Core dependencies
   injector.registerSingleton<Dio>(Dio());
 
-  // Data layer
-  injector.registerLazySingleton<UserApiSource>(() => UserApiSource(injector()));
-  injector.registerLazySingleton<UserRepository>(
-          () => UserRepositoryImpl(injector()));
-
-  // Domain layer
-  injector.registerLazySingleton(() => GetUserProfile(injector()));
-
-  // Presentation layer
-  injector.registerFactory(() => UserProfileViewModel(injector()));
+  injector.registerLazySingleton<BaseApi>(() => BaseApi());
+  injector
+      .registerLazySingleton<Repository>(() => Repository(injector<BaseApi>()));
+  injector.registerLazySingleton<ApiService>(
+      () => ApiService(injector<Repository>()));
+  injector.registerFactory<UserViewModel>(
+      () => UserViewModel(injector<ApiService>()));
 }

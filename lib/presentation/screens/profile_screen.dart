@@ -1,23 +1,22 @@
 import 'package:bloom_app/app/widgets/loading_indicator.dart';
+import 'package:bloom_app/presentation/components/user_info_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/user_profile_viewmodel.dart';
-import '../components/user_info_card.dart';
 
-class UserProfileScreen extends StatefulWidget {
-  final String userId;
+class ProfileScreen extends StatefulWidget {
 
-  const UserProfileScreen({super.key, required this.userId});
+  const ProfileScreen({super.key});
 
   @override
-  State<UserProfileScreen> createState() => _UserProfileScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _UserProfileScreenState extends State<UserProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    // Đảm bảo fetchUsers() được gọi sau khi build context đã được khởi tạo đầy đủ.
+    // Đảm bảo fetchs() được gọi sau khi build context đã được khởi tạo đầy đủ.
     // Tránh lỗi khi sử dụng Provider trong initState.
     // listen: Điều này giúp tránh rebuild widget không cần thiết
     Future.microtask(
@@ -29,7 +28,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     final viewModel = Provider.of<UserViewModel>(context);
 
     return Scaffold(
-        appBar: AppBar(title: const Text('User Profile')),
+        appBar: AppBar(title: const Text(' Profile')),
         body: viewModel.isLoading
             ? const LoadingIndicator()
             : viewModel.error != null

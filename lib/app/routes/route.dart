@@ -1,8 +1,11 @@
 import 'package:bloom_app/app/constants/route_constants.dart';
 import 'package:bloom_app/app/untils/screen_until.dart';
-import 'package:bloom_app/presentation/screens/user_profile_screen.dart';
+import 'package:bloom_app/presentation/screens/camera_screen.dart';
+import 'package:bloom_app/presentation/screens/home_screen.dart';
+import 'package:bloom_app/presentation/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../presentation/screens/bottom_bar_screen.dart';
 import '../../presentation/screens/splash_screen.dart';
 
 class Routes {
@@ -46,14 +49,33 @@ class Routes {
         return SlideLeftRoute(
           widget: const SplashScreen(),
         );
-      case RouteDefine.userProfileScreen:
+      case RouteDefine.bottomBarScreen:
         return SlideLeftRoute(
-          widget: UserProfileScreen(
-            userId:
-                settings.arguments != null ? settings.arguments as String : '',
-          ),
+          widget: const BottomBarScreen(),
+        );
+      case RouteDefine.profileScreen:
+        return SlideLeftRoute(
+          widget: const ProfileScreen(
+              // userId:
+              //     settings.arguments != null ? settings.arguments as String : '',
+              ),
         );
 
+      case RouteDefine.cameraScreen:
+        return SlideUpRoute(
+          widget: const CameraScreen(
+              // userId:
+              //     settings.arguments != null ? settings.arguments as String : '',
+              ),
+        );
+
+      case RouteDefine.homeScreen:
+        return SlideUpRoute(
+          widget: const HomeScreen(
+              // userId:
+              //     settings.arguments != null ? settings.arguments as String : '',
+              ),
+        );
       default:
         return _emptyRoute(settings);
     }

@@ -1,7 +1,8 @@
-import 'package:bloom_app/app/routes/route.dart';
 import 'package:bloom_app/app/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../app/constants/route_constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,8 +15,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3))
-        .then((v) => {Routes().navigateAndRemove("UserProfileScreen")});
+    Future.delayed(const Duration(seconds: 3)).then((v) => {
+          Navigator.pushReplacementNamed(
+            context,
+            RouteDefine.bottomBarScreen,
+          )
+        });
   }
 
   @override

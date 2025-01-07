@@ -1,5 +1,5 @@
 import 'package:bloom_app/app/constants/route_constants.dart';
-import 'package:bloom_app/app/untils/screen_until.dart';
+import 'package:bloom_app/app/utils/screen_until.dart';
 import 'package:bloom_app/presentation/screens/camera_screen.dart';
 import 'package:bloom_app/presentation/screens/home_screen.dart';
 import 'package:bloom_app/presentation/screens/profile_screen.dart';

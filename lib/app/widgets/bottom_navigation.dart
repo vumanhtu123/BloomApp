@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../themes/colors.dart';
-import '../untils/screen_until.dart';
+import '../utils/screen_until.dart';
 
 class BottomNavigation extends StatefulWidget {
   final Function(BottomBarEnum) onChange;

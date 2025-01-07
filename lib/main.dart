@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'app/constants/route_constants.dart';
 import 'app/di/dependency_injection.dart';
 import 'app/themes/colors.dart';
-import 'app/untils/screen_until.dart';
+import 'app/utils/screen_until.dart';
 import 'presentation/viewmodels/user_profile_viewmodel.dart';
 
 void main() {
